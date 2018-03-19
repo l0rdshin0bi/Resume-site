@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>cactus</title>
+    <style media="screen">
+    *{
+      margin: 0px;
+      padding: 0px;
+    }
+    .border{
+      border: solid 1px black;
+    }
+    .positionR{
+      position: relative;
+    }
+    .cactusContainer1{
+      width: 50px;
+      height: 250px;
+      border: solid 1px black;
+      position: absolute;
+      /*transform: scale(1.5, 1.5);*/
+
+    }
+    .potRim1{
+      border-radius: 20px;
+      width: 98%;
+      height: 4%;
+      top: 39%;
+      box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      -moz-box-shadow: 0 0 2px #000;
+      -webkit-box-shadow: 0 0 2px #000;
+    }
+    .potBase1{
+      border-radius: 10px 10px 25px 25px;
+      width: 98%;
+      height: 15%;
+      top: 39%;
+      box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      -moz-box-shadow: 0 0 2px #000;
+      -webkit-box-shadow: 0 0 2px #000;
+    }
+    .pot1DUp1{
+      border: solid 1px transparent;
+      width: 32%;
+      height: 14%;
+      position: relative;
+      top: 39%;
+      transform: rotate(-32deg);
+      border-radius: 4px 0 0 0;
+
+    }
+    .pot1DUp2{
+      border: solid 1px transparent;
+      width: 32%;
+      height: 14%;
+      position: relative;
+      top: 0%;
+      left: 38%;
+      transform: rotate(-40deg);
+
+    }
+    .pot1DDown1{
+      border: solid 1px transparent;
+      width: 32%;
+      height: 14%;
+      position: relative;
+      top: 19%;
+      left: 20%;
+      transform: rotate(40deg);
+
+    }
+    .pot1DDown2{
+      border: solid 1px transparent;
+      width: 38%;
+      height: 14%;
+      position: relative;
+      top: -19%;
+      left: 58%;
+      transform: rotate(32deg);
+      border-radius: 0 2px 0 0;
+    }
+    .pot1ZigZag{
+      background-color: #552700;
+    }
+    .pot1BaseColor{
+      background: -webkit-linear-gradient(#804615, #D49B6A);
+    }
+    .pot1RimColor{
+      background: -webkit-linear-gradient(#FFD1AA, #D49B6A);
+    }
+
+    .cactus1{
+      border-radius: 25px 25px 5px 5px;
+      width: 78%;
+      height: 40%;
+      top: 39%;
+      left: 10%;
+      background-color: #8ABD5F;
+    }
+    .cactus1Details1{
+      height: 100%;
+      width: 55%;
+      border-radius: 90px 90px 0 0;
+      left: 20%;
+      background-color: #3E7213;
+      box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+    }
+    .cactus1Details2{
+      height: 100%;
+      width: 25%;
+      border-radius: 90px 90px 0 0;
+      left: 36%;
+      background-color: #8ABD5F;
+      box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+    }
+    </style>
+
+    <script>
+
+
+
+    </script>
+  </head>
+  <body>
+
+    <!-- cactie -->
+    <div class="cactusContainer1" id="cactus">
+      <div class="cactus1 border positionR">
+        <div class="cactus1Details1 border positionR">
+          <div class="cactus1Details2 border positionR">
+          </div>
+        </div>
+      </div>
+      <div class="potRim1 pot1RimColor border positionR">
+      </div>
+      <div class="potBase1 pot1BaseColor border positionR">
+        <div class="pot1DUp1 pot1ZigZag">
+        </div>
+        <div class="pot1DDown1 pot1ZigZag">
+        </div>
+        <div class="pot1DUp2 pot1ZigZag">
+        </div>
+        <div class="pot1DDown2 pot1ZigZag">
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

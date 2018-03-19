@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JS Test</title>
+
+    <script>
+    $( "#clickme" ).click(function() {
+  $( "#funtimes" ).animate({
+    opacity: 0.25,
+    left: "+=50",
+    height: "toggle"
+  }, 5000, function() {
+    // Animation complete.
+  });
+});
+
+    </script>
+  </head>
+  <body onload="funtimes">
+    <div id="clickme">
+
+    </div>
+    <div id="funtimes" style="background-color:blue; width:50px; height:50px; position: absolute;">
+
+    </div>
+
+  </body>
+</html>

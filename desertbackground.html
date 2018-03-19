@@ -1,0 +1,2115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>desert</title>
+
+    <style media="screen">
+      *{
+        margin: 0px;
+        padding: 0px;
+      }
+      .border{
+        border: solid 1px black;
+      }
+      .positionA{
+        position: absolute;
+      }
+      .positionR{
+        position: relative;
+      }
+      .BackgroundContainer{
+        background: -webkit-linear-gradient(#e4feff, #e4feff, #e4feff, #a5803b, #eaae53 );
+        width: 1557px;
+        height: 100%;
+        border: solid 1px black;
+        position: absolute;
+      }
+/*mountains*/
+      .mountainUniversal{
+        border: solid 1px black;
+        border-color: black black transparent transparent;
+        background-color: #a5803b;
+        position: absolute;
+        transform: rotate(-45deg);
+        width: 300px;
+        height: 500px;
+        border-radius: 1%;
+      }
+      .mountain1Pos{
+        top: 37%;
+        left: 30%;
+      }
+      .mountain2Pos{
+        top: 35%;
+        left: 10%;
+        background-color: rgb(165,128,59);
+      }
+      .mountain3Pos{
+        top: 29%;
+        left: 0%;
+      }
+      .mountain4Pos{
+        top: 35%;
+        left: 20%;
+        background-color: rgba(165,128,59, 0.5);
+        border-color: transparent;
+      }
+/*sun*/
+      .sun{
+        width: 250px;
+        height: 250px;
+        left: 80%;
+        top: 7%;
+        border-radius: 90%;
+        position: absolute;
+        background-color: rgba(233,215,0, 0.3);
+      }
+      .sunLayer1{
+        background-color: rgba(233,215,0, 0.5);
+        width: 200px;
+        height: 200px;
+        position: relative;
+        border-radius: 90%;
+        left: 10%;
+        top: 10%;
+      }
+      .sunLayer2{
+        background-color: rgba(233,215,0, 0.7);
+        width: 150px;
+        height: 150px;
+        position: relative;
+        border-radius: 90%;
+        left: 12%;
+        top: 12%;
+      }
+/*foreground*/
+      .foreGround{
+        background: -webkit-linear-gradient(#a5803b, #eaae53 );
+        width: 100%;
+        height: 45%;
+        border: solid 1px black;
+        position: absolute;
+        top: 68%;
+        left: -1px;
+        border-color: black transparent transparent transparent;
+      }
+/*clouds*/
+      .clouds{
+        position: absolute;
+        top: 5%;
+        border-radius: 60px;
+        background-color: 	rgb(221,224,242);
+        border: solid 1px black;
+      }
+      .cloud1-1{
+        width: 80px;
+        height: 60px;
+        border-radius: 60px 60px 0 60px;
+        left: 65px;
+        border-color: black transparent black black;
+      }
+      .cloud1-2{
+        width: 80px;
+        height: 70px;
+        left: 110px;
+        top: 3%;
+        border-color: black black transparent black;
+      }
+      .cloud1-3{
+        width: 80px;
+        height: 60px;
+        left: 145px;
+        border-radius: 60px 60px 60px 0;
+        border-color: black black black transparent;
+      }
+      .cloud2-1{
+        width: 80px;
+        height: 60px;
+        border-radius: 60px 60px 0 60px;
+        left: 565px;
+        border-color: black transparent black black;
+      }
+      .cloud2-2{
+        width: 80px;
+        height: 70px;
+        left: 610px;
+        top: 3%;
+        border-color: black black transparent black;
+      }
+      .cloud2-3{
+        width: 80px;
+        height: 60px;
+        left: 645px;
+        border-radius: 60px 60px 60px 0;
+        border-color: black black black transparent;
+      }
+      .cloud3-1{
+        width: 80px;
+        height: 60px;
+        border-radius: 60px 60px 0 60px;
+        left: 265px;
+        border-color: black transparent black black;
+        top: 15%;
+      }
+      .cloud3-2{
+        width: 80px;
+        height: 70px;
+        left: 310px;
+        top: 12%;
+        border-color: black black transparent black;
+      }
+      .cloud3-3{
+        width: 80px;
+        height: 60px;
+        left: 345px;
+        border-radius: 60px 60px 60px 0;
+        border-color: black black black transparent;
+        top: 15%;
+      }
+/*rabbit*/
+      .rabbitBody{
+        width: 50px;
+        height: 50px;
+        top: 62%;
+        left: 35%;
+        border-radius: 20px;
+        background-color: grey;
+      }
+      .rabbitHead{
+        width: 40px;
+        height: 50px;
+        top: 58%;
+        left: 36%;
+        border-radius: 20px;
+        border-color: black black transparent black;
+        background-color: grey;
+      }
+      .rabbitEarsUniversal{
+        width: 10px;
+        height: 35px;
+        border-radius: 90px;
+        border-color: black black transparent black;
+        background-color: grey;
+      }
+      .rabbitEarInnerUniversal{
+        width: 5px;
+        height: 29px;
+        border-radius: 90px;
+        border-color: black black transparent black;
+        background-color: pink;
+      }
+      .rabbitEarL{
+        top: -25px;
+        left: 4px;
+      }
+      .rabbitEarInnerL{
+        top: 1px;
+        left: 1px;
+      }
+      .rabbitEarR{
+        top: -25px;
+        left: 25px;
+      }
+      .rabbitEarInnerR{
+        top: 1px;
+        left: 1px;
+      }
+      .rabbitNose{
+        width: 7px;
+        height: 6px;
+        border-radius: 30px;
+        left: 16px;
+        top: 25px;
+        background-color: brown;
+      }
+      .rabbitEyeL{
+        border-radius: 30px;
+        width: 6px;
+        height: 6px;
+        top: 13px;
+        left: 6px;
+        background-color: black;
+      }
+      .rabbitEyeLIris{
+        border-radius: 30px;
+        width: 2px;
+        height: 2px;
+        top: 0px;
+        left: 1px;
+        background-color: white;
+      }
+      .rabbitEyeR{
+        border-radius: 30px;
+        width: 6px;
+        height: 6px;
+        top: 13px;
+        left: 26px;
+        background-color: black;
+      }
+      .rabbitEyeRIris{
+        border-radius: 30px;
+        width: 2px;
+        height: 2px;
+        left: 1px;
+        background-color: white;
+      }
+      .rabbitMouth{
+        border-radius: 30px;
+        width: 13px;
+        height: 8px;
+      }
+      .rabbitMouthMain{
+        width: 18px;
+        height: 16px;
+        left: 10px;
+        top: 22px;
+        background-color: white;
+      }
+      .rabbitMouthL{
+        left: -6px;
+        top: 5px;
+        border-color: transparent black transparent transparent;
+        transform: rotate(32deg);
+      }
+      .rabbitMouthR{
+        left: 8px;
+        top: 5px;
+        border-color: transparent transparent transparent black;
+        transform: rotate(-32deg);
+      }
+/*skills*/
+      .skillContainer{
+        position: absolute;
+        left: 50%;
+        width: 600px;
+        height: 20px;
+        top: 38%
+      }
+      .css{
+        position: absolute;
+        width: 40px;
+        transform: rotate(-45deg);
+        left: 13%;
+        top: -20px;
+      }
+      .html{
+        position: absolute;
+        width: 40px;
+        transform: rotate(-45deg);
+        left: 23%;
+        top: -20px;
+      }
+      .javascript{
+        position: absolute;
+        width: 40px;
+        transform: rotate(-45deg);
+        left: 33%;
+        top: -20px;
+      }
+      .ruby{
+        position: absolute;
+        width: 40px;
+        transform: rotate(-45deg);
+        left: 43%;
+        top: -20px;
+      }
+      .jquery{
+        position: absolute;
+        width: 40px;
+        transform: rotate(-45deg);
+        left: 53%;
+        top: -20px;
+      }
+      .terminal{
+        position: absolute;
+        width: 40px;
+        transform: rotate(-45deg);
+        left: 63%;
+        top: -20px;
+      }
+      .git{
+        position: absolute;
+        width: 40px;
+        transform: rotate(-45deg);
+        left: 73%;
+        top: -20px;
+      }
+      .sqlite{
+        position: absolute;
+        width: 40px;
+        transform: rotate(-45deg);
+        left: 83%;
+        top: -20px;
+      }
+      h3{
+        font-family: forte;
+        color: #739900;
+        text-shadow: 2px 2px 2px #000;
+      }
+/*bracketContainer*/
+      .bracketContainer{
+        border: solid 1px #ace600;
+        position: absolute;
+        box-shadow: 2px 2px 2px #ace600;
+        top: 41%;
+        left: 50%;
+        width: 550px;
+        height: 300px;
+      }
+      .beginner{
+        position: absolute;
+        border: solid 1px;
+        border-color: #ace600 transparent transparent transparent;
+        top: 80%;
+        left: -1px;
+        width: 549px;
+        height: 50px;
+      }
+      .familiar{
+        position: absolute;
+        border: solid 1px;
+        border-color: #ace600 transparent transparent transparent;
+        top: 60%;
+        left: -1px;
+        width: 549px;
+        height: 50px;
+      }
+      .proficient{
+        position: absolute;
+        border: solid 1px;
+        border-color: #ace600 transparent transparent transparent;
+        top: 40%;
+        left: -1px;
+        width: 549px;
+        height: 50px;
+      }
+      .expert{
+        position: absolute;
+        border: solid 1px;
+        border-color: #ace600 transparent transparent transparent;
+        top: 20%;
+        left: -1px;
+        width: 549px;
+        height: 50px;
+      }
+      .master{
+        position: absolute;
+        border: solid 1px;
+        border-color: #ace600 transparent transparent transparent;
+        left: -1px;
+        width: 549px;
+        height: 50px;
+      }
+      h4{
+        font-family: forte;
+        color: #ace600;
+        text-shadow: 2px 2px 2px #000;
+      }
+/*cactus patch*/
+      .cactusPatch{
+        width: 600px;
+        height: 50px;
+        top: 83%;
+        left: 50%;
+        position: absolute;
+      }
+/*cactus1*/
+      .cactusContainer1{
+        width: 50px;
+        height: 250px;
+        top: -280px;
+        left: 12%;
+        position: absolute;
+        /*transform: scale(1.5, 1.5);*/
+      }
+      .potRim1{
+        border-radius: 20px;
+        width: 98%;
+        height: 4%;
+        top: 39%;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .potBase1{
+        border-radius: 10px 10px 25px 25px;
+        width: 98%;
+        height: 15%;
+        top: 39%;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .pot1ZigZag{
+        background-color: #552700;
+      }
+      .pot1BaseColor{
+        background: -webkit-linear-gradient(#804615, #D49B6A);
+      }
+      .pot1RimColor{
+        background: -webkit-linear-gradient(#FFD1AA, #D49B6A);
+      }
+      .cactus1{
+        border-radius: 25px 25px 5px 5px;
+        width: 78%;
+        height: 72%;
+        top: 39%;
+        left: 10%;
+        background-color: #8ABD5F;
+      }
+      .cactus1Details1{
+        height: 100%;
+        width: 55%;
+        border-radius: 90px 90px 0 0;
+        left: 20%;
+        background-color: #3E7213;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .cactus1Details2{
+        height: 100%;
+        width: 25%;
+        border-radius: 90px 90px 0 0;
+        left: 36%;
+        background-color: #8ABD5F;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .pot1DUp1{
+        border: solid 1px transparent;
+        width: 32%;
+        height: 14%;
+        position: relative;
+        top: 39%;
+        transform: rotate(-32deg);
+        border-radius: 4px 0 0 0;
+      }
+      .pot1DUp2{
+        border: solid 1px transparent;
+        width: 32%;
+        height: 14%;
+        position: relative;
+        top: 0%;
+        left: 38%;
+        transform: rotate(-40deg);
+      }
+      .pot1DDown1{
+        border: solid 1px transparent;
+        width: 32%;
+        height: 14%;
+        position: relative;
+        top: 19%;
+        left: 20%;
+        transform: rotate(40deg);
+      }
+      .pot1DDown2{
+        border: solid 1px transparent;
+        width: 38%;
+        height: 14%;
+        position: relative;
+        top: -19%;
+        left: 58%;
+        transform: rotate(32deg);
+        border-radius: 0 2px 0 0;
+      }
+/*cactus2*/
+      .cactusContainer2{
+        width: 50px;
+        height: 250px;
+        top: -280px;
+        left: 22%;
+        position: absolute;
+        /*transform: scale(1.5, 1.5);*/
+      }
+      .potRim2{
+        border-radius: 20px;
+        width: 98%;
+        height: 4%;
+        top: 39%;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .potBase2{
+        border-radius: 10px 10px 25px 25px;
+        width: 98%;
+        height: 15%;
+        top: 39%;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .pot1ZigZag{
+        background-color: #552700;
+      }
+      .pot1BaseColor{
+        background: -webkit-linear-gradient(#804615, #D49B6A);
+      }
+      .pot1RimColor{
+        background: -webkit-linear-gradient(#FFD1AA, #D49B6A);
+      }
+      .cactus2{
+        border-radius: 25px 25px 5px 5px;
+        width: 78%;
+        height: 72%;
+        top: 39%;
+        left: 10%;
+        background-color: #8ABD5F;
+      }
+      .cactus2Details1{
+        height: 100%;
+        width: 55%;
+        border-radius: 90px 90px 0 0;
+        left: 20%;
+        background-color: #3E7213;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .cactus2Details2{
+        height: 100%;
+        width: 25%;
+        border-radius: 90px 90px 0 0;
+        left: 36%;
+        background-color: #8ABD5F;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .pot2DUp1{
+        border: solid 1px transparent;
+        width: 32%;
+        height: 14%;
+        position: relative;
+        top: 39%;
+        transform: rotate(-32deg);
+        border-radius: 4px 0 0 0;
+
+      }
+      .pot2DUp2{
+        border: solid 1px transparent;
+        width: 32%;
+        height: 14%;
+        position: relative;
+        top: 0%;
+        left: 38%;
+        transform: rotate(-40deg);
+
+      }
+      .pot2DDown1{
+        border: solid 1px transparent;
+        width: 32%;
+        height: 14%;
+        position: relative;
+        top: 19%;
+        left: 20%;
+        transform: rotate(40deg);
+
+      }
+      .pot2DDown2{
+        border: solid 1px transparent;
+        width: 38%;
+        height: 14%;
+        position: relative;
+        top: -19%;
+        left: 58%;
+        transform: rotate(32deg);
+        border-radius: 0 2px 0 0;
+      }
+/*cactus3*/
+      .cactusContainer3{
+        width: 50px;
+        height: 250px;
+        top: -220px;
+        left: 32%;
+        position: absolute;
+        /*transform: scale(1.5, 1.5);*/
+      }
+      .potRim3{
+        border-radius: 20px;
+        width: 98%;
+        height: 4%;
+        top: 39%;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .potBase3{
+        border-radius: 10px 10px 25px 25px;
+        width: 98%;
+        height: 15%;
+        top: 39%;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .pot1ZigZag{
+        background-color: #552700;
+      }
+      .pot1BaseColor{
+        background: -webkit-linear-gradient(#804615, #D49B6A);
+      }
+      .pot1RimColor{
+        background: -webkit-linear-gradient(#FFD1AA, #D49B6A);
+      }
+      .cactus3{
+        border-radius: 25px 25px 5px 5px;
+        width: 78%;
+        height: 48%;
+        top: 39%;
+        left: 10%;
+        background-color: #8ABD5F;
+      }
+      .cactus3Details1{
+        height: 100%;
+        width: 55%;
+        border-radius: 90px 90px 0 0;
+        left: 20%;
+        background-color: #3E7213;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .cactus3Details2{
+        height: 100%;
+        width: 25%;
+        border-radius: 90px 90px 0 0;
+        left: 36%;
+        background-color: #8ABD5F;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .pot3DUp1{
+        border: solid 1px transparent;
+        width: 32%;
+        height: 14%;
+        position: relative;
+        top: 39%;
+        transform: rotate(-32deg);
+        border-radius: 4px 0 0 0;
+
+      }
+      .pot3DUp2{
+        border: solid 1px transparent;
+        width: 32%;
+        height: 14%;
+        position: relative;
+        top: 0%;
+        left: 38%;
+        transform: rotate(-40deg);
+
+      }
+      .pot3DDown1{
+        border: solid 1px transparent;
+        width: 32%;
+        height: 14%;
+        position: relative;
+        top: 19%;
+        left: 20%;
+        transform: rotate(40deg);
+      }
+      .pot3DDown2{
+        border: solid 1px transparent;
+        width: 38%;
+        height: 14%;
+        position: relative;
+        top: -19%;
+        left: 58%;
+        transform: rotate(32deg);
+        border-radius: 0 2px 0 0;
+      }
+/*cactus4*/
+      .cactusContainer4{
+        width: 50px;
+        height: 250px;
+        top: -280px;
+        left: 42%;
+        position: absolute;
+        /*transform: scale(1.5, 1.5);*/
+      }
+      .potRim4{
+        border-radius: 20px;
+        width: 98%;
+        height: 4%;
+        top: 39%;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .potBase4{
+        border-radius: 10px 10px 25px 25px;
+        width: 98%;
+        height: 15%;
+        top: 39%;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .pot1ZigZag{
+        background-color: #552700;
+      }
+      .pot1BaseColor{
+        background: -webkit-linear-gradient(#804615, #D49B6A);
+      }
+      .pot1RimColor{
+        background: -webkit-linear-gradient(#FFD1AA, #D49B6A);
+      }
+      .cactus4{
+        border-radius: 25px 25px 5px 5px;
+        width: 78%;
+        height: 72%;
+        top: 39%;
+        left: 10%;
+        background-color: #8ABD5F;
+      }
+      .cactus4Details1{
+        height: 100%;
+        width: 55%;
+        border-radius: 90px 90px 0 0;
+        left: 20%;
+        background-color: #3E7213;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .cactus4Details2{
+        height: 100%;
+        width: 25%;
+        border-radius: 90px 90px 0 0;
+        left: 36%;
+        background-color: #8ABD5F;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .pot4DUp1{
+        border: solid 1px transparent;
+        width: 32%;
+        height: 14%;
+        position: relative;
+        top: 39%;
+        transform: rotate(-32deg);
+        border-radius: 4px 0 0 0;
+      }
+      .pot4DUp2{
+        border: solid 1px transparent;
+        width: 32%;
+        height: 14%;
+        position: relative;
+        top: 0%;
+        left: 38%;
+        transform: rotate(-40deg);
+      }
+      .pot4DDown1{
+        border: solid 1px transparent;
+        width: 32%;
+        height: 14%;
+        position: relative;
+        top: 19%;
+        left: 20%;
+        transform: rotate(40deg);
+      }
+      .pot4DDown2{
+        border: solid 1px transparent;
+        width: 38%;
+        height: 14%;
+        position: relative;
+        top: -19%;
+        left: 58%;
+        transform: rotate(32deg);
+        border-radius: 0 2px 0 0;
+      }
+/*cactus5*/
+      .cactusContainer5{
+        width: 50px;
+        height: 250px;
+        top: -165px;
+        left: 52%;
+        position: absolute;
+        /*transform: scale(1.5, 1.5);*/
+      }
+      .potRim5{
+        border-radius: 20px;
+        width: 98%;
+        height: 4%;
+        top: 39%;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .potBase5{
+        border-radius: 10px 10px 25px 25px;
+        width: 98%;
+        height: 15%;
+        top: 39%;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .pot1ZigZag{
+        background-color: #552700;
+      }
+      .pot1BaseColor{
+        background: -webkit-linear-gradient(#804615, #D49B6A);
+      }
+      .pot1RimColor{
+        background: -webkit-linear-gradient(#FFD1AA, #D49B6A);
+      }
+      .cactus5{
+        border-radius: 25px 25px 5px 5px;
+        width: 78%;
+        height: 26%;
+        top: 39%;
+        left: 10%;
+        background-color: #8ABD5F;
+      }
+      .cactus5Details1{
+        height: 100%;
+        width: 55%;
+        border-radius: 90px 90px 0 0;
+        left: 20%;
+        background-color: #3E7213;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .cactus5Details2{
+        height: 100%;
+        width: 25%;
+        border-radius: 90px 90px 0 0;
+        left: 36%;
+        background-color: #8ABD5F;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .pot5DUp1{
+        border: solid 1px transparent;
+        width: 32%;
+        height: 14%;
+        position: relative;
+        top: 39%;
+        transform: rotate(-32deg);
+        border-radius: 4px 0 0 0;
+
+      }
+      .pot5DUp2{
+        border: solid 1px transparent;
+        width: 32%;
+        height: 14%;
+        position: relative;
+        top: 0%;
+        left: 38%;
+        transform: rotate(-40deg);
+
+      }
+      .pot5DDown1{
+        border: solid 1px transparent;
+        width: 32%;
+        height: 14%;
+        position: relative;
+        top: 19%;
+        left: 20%;
+        transform: rotate(40deg);
+
+      }
+      .pot5DDown2{
+        border: solid 1px transparent;
+        width: 38%;
+        height: 14%;
+        position: relative;
+        top: -19%;
+        left: 58%;
+        transform: rotate(32deg);
+        border-radius: 0 2px 0 0;
+      }
+/*cactus6*/
+      .cactusContainer6{
+        width: 50px;
+        height: 250px;
+        top: -280px;
+        left: 62%;
+        position: absolute;
+        /*transform: scale(1.5, 1.5);*/
+      }
+      .potRim6{
+        border-radius: 20px;
+        width: 98%;
+        height: 4%;
+        top: 39%;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .potBase6{
+        border-radius: 10px 10px 25px 25px;
+        width: 98%;
+        height: 15%;
+        top: 39%;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .pot1ZigZag{
+        background-color: #552700;
+      }
+      .pot1BaseColor{
+        background: -webkit-linear-gradient(#804615, #D49B6A);
+      }
+      .pot1RimColor{
+        background: -webkit-linear-gradient(#FFD1AA, #D49B6A);
+      }
+      .cactus6{
+        border-radius: 25px 25px 5px 5px;
+        width: 78%;
+        height: 72%;
+        top: 39%;
+        left: 10%;
+        background-color: #8ABD5F;
+      }
+      .cactus6Details1{
+        height: 100%;
+        width: 55%;
+        border-radius: 90px 90px 0 0;
+        left: 20%;
+        background-color: #3E7213;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .cactus6Details2{
+        height: 100%;
+        width: 25%;
+        border-radius: 90px 90px 0 0;
+        left: 36%;
+        background-color: #8ABD5F;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .pot6DUp1{
+        border: solid 1px transparent;
+        width: 32%;
+        height: 14%;
+        position: relative;
+        top: 39%;
+        transform: rotate(-32deg);
+        border-radius: 4px 0 0 0;
+
+      }
+      .pot6DUp2{
+        border: solid 1px transparent;
+        width: 32%;
+        height: 14%;
+        position: relative;
+        top: 0%;
+        left: 38%;
+        transform: rotate(-40deg);
+
+      }
+      .pot6DDown1{
+        border: solid 1px transparent;
+        width: 32%;
+        height: 14%;
+        position: relative;
+        top: 19%;
+        left: 20%;
+        transform: rotate(40deg);
+
+      }
+      .pot6DDown2{
+        border: solid 1px transparent;
+        width: 38%;
+        height: 14%;
+        position: relative;
+        top: -19%;
+        left: 58%;
+        transform: rotate(32deg);
+        border-radius: 0 2px 0 0;
+      }
+/*cactus7*/
+      .cactusContainer7{
+        width: 50px;
+        height: 250px;
+        top: -220px;
+        left: 72%;
+        position: absolute;
+        /*transform: scale(1.5, 1.5);*/
+      }
+      .potRim7{
+        border-radius: 20px;
+        width: 98%;
+        height: 4%;
+        top: 39%;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .potBase7{
+        border-radius: 10px 10px 25px 25px;
+        width: 98%;
+        height: 15%;
+        top: 39%;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .pot1ZigZag{
+        background-color: #552700;
+      }
+      .pot1BaseColor{
+        background: -webkit-linear-gradient(#804615, #D49B6A);
+      }
+      .pot1RimColor{
+        background: -webkit-linear-gradient(#FFD1AA, #D49B6A);
+      }
+      .cactus7{
+        border-radius: 25px 25px 5px 5px;
+        width: 78%;
+        height: 48%;
+        top: 39%;
+        left: 10%;
+        background-color: #8ABD5F;
+      }
+      .cactus7Details1{
+        height: 100%;
+        width: 55%;
+        border-radius: 90px 90px 0 0;
+        left: 20%;
+        background-color: #3E7213;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .cactus7Details2{
+        height: 100%;
+        width: 25%;
+        border-radius: 90px 90px 0 0;
+        left: 36%;
+        background-color: #8ABD5F;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .pot7DUp1{
+        border: solid 1px transparent;
+        width: 32%;
+        height: 14%;
+        position: relative;
+        top: 39%;
+        transform: rotate(-32deg);
+        border-radius: 4px 0 0 0;
+
+      }
+      .pot7DUp2{
+        border: solid 1px transparent;
+        width: 32%;
+        height: 14%;
+        position: relative;
+        top: 0%;
+        left: 38%;
+        transform: rotate(-40deg);
+
+      }
+      .pot7DDown1{
+        border: solid 1px transparent;
+        width: 32%;
+        height: 14%;
+        position: relative;
+        top: 19%;
+        left: 20%;
+        transform: rotate(40deg);
+
+      }
+      .pot7DDown2{
+        border: solid 1px transparent;
+        width: 38%;
+        height: 14%;
+        position: relative;
+        top: -19%;
+        left: 58%;
+        transform: rotate(32deg);
+        border-radius: 0 2px 0 0;
+      }
+/*cactus8*/
+      .cactusContainer8{
+        width: 50px;
+        height: 250px;
+        top: -220px;
+        left: 82%;
+        position: absolute;
+        /*transform: scale(1.5, 1.5);*/
+      }
+      .potRim8{
+        border-radius: 20px;
+        width: 98%;
+        height: 4%;
+        top: 39%;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .potBase8{
+        border-radius: 10px 10px 25px 25px;
+        width: 98%;
+        height: 15%;
+        top: 39%;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .pot1ZigZag{
+        background-color: #552700;
+      }
+      .pot1BaseColor{
+        background: -webkit-linear-gradient(#804615, #D49B6A);
+      }
+      .pot1RimColor{
+        background: -webkit-linear-gradient(#FFD1AA, #D49B6A);
+      }
+      .cactus8{
+        border-radius: 25px 25px 5px 5px;
+        width: 78%;
+        height: 48%;
+        top: 39%;
+        left: 10%;
+        background-color: #8ABD5F;
+      }
+      .cactus8Details1{
+        height: 100%;
+        width: 55%;
+        border-radius: 90px 90px 0 0;
+        left: 20%;
+        background-color: #3E7213;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .cactus8Details2{
+        height: 100%;
+        width: 25%;
+        border-radius: 90px 90px 0 0;
+        left: 36%;
+        background-color: #8ABD5F;
+        box-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .pot8DUp1{
+        border: solid 1px transparent;
+        width: 32%;
+        height: 14%;
+        position: relative;
+        top: 39%;
+        transform: rotate(-32deg);
+        border-radius: 4px 0 0 0;
+
+      }
+      .pot8DUp2{
+        border: solid 1px transparent;
+        width: 32%;
+        height: 14%;
+        position: relative;
+        top: 0%;
+        left: 38%;
+        transform: rotate(-40deg);
+
+      }
+      .pot8DDown1{
+        border: solid 1px transparent;
+        width: 32%;
+        height: 14%;
+        position: relative;
+        top: 19%;
+        left: 20%;
+        transform: rotate(40deg);
+
+      }
+      .pot8DDown2{
+        border: solid 1px transparent;
+        width: 38%;
+        height: 14%;
+        position: relative;
+        top: -19%;
+        left: 58%;
+        transform: rotate(32deg);
+        border-radius: 0 2px 0 0;
+      }
+/*character styles*/
+      .characterContainer{
+        width: 300px;
+        height: 500px;
+        left: 60px;
+        top: 40%;
+        position: absolute;
+      }
+      .Rear{
+        width: 24px;
+        height: 24px;
+        border-color: transparent #000 #000 transparent;
+        border-radius: 90px;
+        background-color: #ad885a;
+        top: 115px;
+        left: 191px;
+        transform: rotate(-50deg);
+      }
+      .innerEarR{
+        width: 18px;
+        height: 20px;
+        border-color: transparent #000 #000 transparent;
+        border-radius: 90px;
+        background-color: #a07c50;
+        top: -2px;
+        left: 1px;
+        transform: rotate(-20deg);
+      }
+      .head{
+        top: 75px;
+        left: 105px;
+        width: 100px;
+        height: 130px;
+        border-radius: 90px;
+        background: -webkit-linear-gradient(180deg, #a07c50, #ad885a);
+      }
+      .hat{
+        width: 92px;
+        height: 35px;
+        top: -8px;
+        left: 2px;
+        border-radius: 200px 200px 0 0;
+        background: -webkit-linear-gradient(180deg, #660000, maroon);
+      }
+      .bill{
+        width: 92px;
+        height: 4px;
+        top: 30px;
+        left: 8px;
+        border-radius: 200px 200px 0 0;
+        background-color: gold;
+      }
+      .LeyeBrow{
+        width: 16px;
+        height: 8px;
+        border: solid 3px #000;
+        border-color: #000 transparent transparent transparent;
+        border-radius: 90px;
+        top: 32px;;
+        left: 23px;
+        transform: rotate(-8deg);
+      }
+      .ReyeBrow{
+        width: 16px;
+        height: 8px;
+        border: solid 3px #000;
+        border-color: #000 transparent transparent transparent;
+        border-radius: 90px;
+        top: 32px;
+        left: 58px;
+        transform: rotate(8deg);
+      }
+      .Lear{
+        width: 24px;
+        height: 26px;
+        border-color: transparent transparent #000 #000;
+        border-radius: 90px;
+        background: -webkit-linear-gradient(240deg, #a07c50, #ad885a);
+        top: 40px;
+        left: -10px;
+        transform: rotate(26deg);
+      }
+      .innerEarL{
+        width: 14px;
+        height: 18px;
+        border-color: transparent transparent #000 #000;
+        border-radius: 90px;
+        background-color: #a07c50;
+        top: 2px;
+        left: 4px;
+        transform: rotate(8deg);
+      }
+      .earLColorCorrect{
+        width: 14px;
+        height: 25px;
+        top: 40px;
+        left: 2px;
+        border-radius: 90px;
+        background-color: #ad885a;
+      }
+      .Leye{
+        top: 40px;
+        left: 25px;
+        width: 15px;
+        height: 25px;
+        border-radius: 90px 90px 0px 0px;
+        background-color: #a07c50;
+      }
+      .Reye{
+        top: 40px;
+        left: 60px;
+        width: 14px;
+        height: 25px;
+        border-radius: 90px 90px 0px 0px;
+        background-color: #a07c50;
+      }
+      .irisL{
+        width: 13px;
+        height: 17px;
+        border-radius: 90px 90px 0px 0px;
+        top: 7px;
+        background: -webkit-linear-gradient(#442e13, #63431c);
+      }
+      .irisR{
+        width: 13px;
+        height: 17px;
+        border-radius: 90px 90px 0px 0px;
+        top: 7px;
+        left: -1px;
+        background: -webkit-linear-gradient(#442e13, #63431c);
+      }
+      .innerIris{
+        width: 7px;
+        height: 7px;
+        border-radius: 90px;
+        top: 6px;
+        left: 2px;
+        background-color: black;
+      }
+      .irisShine{
+        width: 5px;
+        height: 5px;
+        border-radius: 90px;
+        background-color: white;
+        top: -4px;
+      }
+      .nose{
+        width: 14px;
+        height: 18px;
+        border-color: transparent #000 #000 transparent;
+        border-radius: 90px;
+        background: -webkit-linear-gradient(240deg, #a07c50, #ad885a);
+        top: 60px;
+        left: 43px;
+      }
+      .mouth{
+        width: 70px;
+        height: 70px;
+        border: solid 3px #000;
+        border-color: transparent transparent #000 transparent;
+        border-radius: 90px;
+        top: 30px;
+        left: 15px;
+        transform: rotate(12deg);
+      }
+      p{
+        text-align: center;
+        color: gold;
+        font-size: 16px;
+        font-family: serif;
+        padding: 6px;
+      }
+      .Larm{
+        width: 100px;
+        height: 32px;
+        top: 70px;
+        left: 22px;
+        transform: rotate(45deg);
+        background-color: #ad885a;
+        border-radius: 20px;
+      }
+      .Lhand{
+        top: 164px;
+        left: 24px;
+        width: 35px;
+        height: 40px;
+        border-radius: 90px;
+        border-color: transparent black transparent black;
+        background-color: #ad885a;
+        transform: rotate(-28deg);
+        /*position: absolute;
+        border-radius: 40px 40px 0 0;
+        border-color: #ad885a transparent transparent transparent;*/
+      }
+      .Lthumb{
+        top: 160px;
+        left: 53px;
+        width: 10px;
+        height: 20px;
+        border-radius: 90px;
+        border-color: black black transparent black;
+        background-color: #ad885a;
+        transform: rotate(32deg);
+      }
+      .Lindex{
+        top: -15px;
+        left: 23px;
+        width: 10px;
+        height: 22px;
+        border-radius: 90px;
+        border-color: black black transparent black;
+        background-color: #ad885a;
+        transform: rotate(22deg);
+      }
+      .Lmiddle{
+        top: -18px;
+        left: 8px;
+        width: 10px;
+        height: 22px;
+        border-radius: 90px;
+        border-color: black black transparent black;
+        background-color: #ad885a;
+        transform: rotate(-2deg);
+      }
+      .Lring{
+        top: -10px;
+        left: -6px;
+        width: 10px;
+        height: 22px;
+        border-radius: 90px;
+        border-color: black black transparent black;
+        background-color: #ad885a;
+        transform: rotate(-30deg);
+      }
+      .Rarm{
+        width: 100px;
+        height: 32px;
+        top: 28px;
+        left: 180px;
+        transform: rotate(-45deg);
+        background-color: #a07c50;
+        border-radius: 20px;
+      }
+      .Rhand{
+        top: 160px;
+        left: 238px;
+        width: 35px;
+        height: 40px;
+        border-radius: 90px;
+        border-color: transparent black transparent black;
+        background-color: #a07c50;
+        transform: rotate(14deg);
+        }
+      .Rthumb{
+        top: 162px;
+        left: 230px;
+        width: 10px;
+        height: 20px;
+        border-radius: 90px;
+        border-color: black black transparent black;
+        background-color: #a07c50;
+        transform: rotate(-48deg);
+      }
+      .Rindex{
+        top: -16px;
+        left: -1px;
+        width: 10px;
+        height: 22px;
+        border-radius: 90px;
+        border-color: black black transparent black;
+        background-color: #a07c50;
+        transform: rotate(-20deg);
+      }
+      .Rmiddle{
+        top: -20px;
+        left: 14px;
+        width: 10px;
+        height: 22px;
+        border-radius: 90px;
+        border-color: black black transparent black;
+        background-color: #a07c50;
+        transform: rotate(0deg);
+      }
+      .Rring{
+        top: -14px;
+        left: 28px;
+        width: 10px;
+        height: 22px;
+        border-radius: 90px;
+        border-color: black black transparent black;
+        background-color: #a07c50;
+        transform: rotate(26deg);
+      }
+      .mbody{
+        height: 150px;
+        width: 122px;
+        border-radius: 35px 35px 2px 2px;
+        top: 220px;
+        left: 90px;
+        background: -webkit-linear-gradient(180deg, #660000, maroon);
+      }
+      .LgoldTrim{
+        background-color: gold;
+        height: 50px;
+        width: 37px;
+        border-radius: 35px 25px 25px 0;
+        top: -1px;
+      }
+      .LjerseyArm{
+        border-color: transparent black black transparent;
+        background-color: #ad885a;
+        height: 45px;
+        width: 35px;
+        border-radius: 35px 25px 25px 10px;
+        left: -1px;
+      }
+      .neckTrim{
+        background-color: gold;
+        height: 25px;
+        width: 52px;
+        border-radius: 0 0 35px 35px;
+        left: 39px;
+        top: -1.5px;
+      }
+      .neckTrimGold{
+        background: -webkit-linear-gradient(180deg, #a07c50, #ad885a);
+        height: 21px;
+        width: 46px;
+        border-radius: 0 0 35px 35px;
+        left: 42px;
+        top: -1.5px;
+      }
+      .neckLineColor{
+        border: solid black 5px;
+        top: -154px;
+        left: 21px;
+        width: 80px;
+        height: 130px;
+        border-radius: 90px;
+        background: transparent;
+        border-color: transparent transparent #ad885a transparent;
+      }
+      .neckLine{
+        top: -146px;
+        left: 14px;
+        width: 100px;
+        height: 130px;
+        border-radius: 90px;
+        background: transparent;
+        border-color: transparent transparent black transparent;
+      }
+      .neck{
+        background: -webkit-linear-gradient(180deg, #a07c50, #ad885a);
+        height: 26px;
+        width: 26px;
+        border-radius: 0 0 5px 5px;
+        border-color: transparent black transparent black;
+        left: 52px;
+        top: -20px;
+
+      }
+      .RgoldTrim{
+        background-color: gold;
+        height: 51px;
+        width: 28px;
+        border-radius: 0 35px 0 35px;
+        top: -1px;
+        left: 93px;
+      }
+      .RjerseyArm{
+        border-color: black transparent transparent transparent;
+        background-color: #660000;
+        height: 50px;
+        width: 26px;
+        border-radius: 0 35px 0 35px;
+        top: 0px;
+        left: 92px;
+      }
+      .A{
+        font-size: 100px;
+        color: gold;
+        top: 20px;
+        left: 34px;
+        text-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .S{
+        font-size: 90px;
+        color: gold;
+        top: 30px;
+        left: 44px;
+        text-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .bottomJerseyTrim{
+        background-color: gold;
+        width: 122px;
+        height: 3px;
+        top: 142px;
+        left: -1px;
+      }
+      .pants{
+        background-color: #5480af;
+        background: -webkit-linear-gradient(180deg, #49719c, #5480af);
+        width: 122px;
+        height: 100px;
+        top: 165px;
+        left: 90px;
+      }
+      .pantsLine{
+        width: 2px;
+        height: 70px;
+        background-color: black;
+        left: 70px;
+        top: 31px;
+      }
+      .pantsV{
+        width: 15px;
+        height: 15px;
+        border-color: transparent transparent black black;
+        left: 63px;
+        top: 13px;
+        transform: rotate(-45deg);
+      }
+      .pantsLPocket{
+        width: 25px;
+        height: 15px;
+        border-color: transparent transparent black transparent;
+        left: -10px;
+        top: -5px;
+        transform: rotate(-45deg);
+      }
+      .pantsRPocket{
+        width: 15px;
+        height: 15px;
+        border-color: transparent transparent transparent black;
+        left: 114px;
+        top: -9px;
+        transform: rotate(-45deg);
+      }
+      .Lboot{
+        background-color: #60503a;
+        width: 69px;
+        height: 20px;
+        top: 79px;
+        border-radius: 24px 24px 0 0;
+      }
+      .bootLBase{
+        background-color: #403526;
+        width: 67px;
+        height: 4px;
+        top: 15px;
+        border-radius: 4px 4px 0 0;
+      }
+      .Rboot{
+        background-color: #60503a;
+        width: 59px;
+        height: 20px;
+        top: 79px;
+        border-radius: 24px 24px 0 0;
+        left: 71px;
+      }
+      .bootRBase{
+        border: solid 1px ;
+        border-radius: 4px 4px 0 0;
+        background-color: #403526;
+        width: 57px;
+        height: 4px;
+        top: 15px;
+      }
+      .textContainer{
+        width: 300px;
+        height: 250px;
+        left: 300px;
+        top: 200px;
+        position: absolute;
+      }
+      .textBoxCircle1{
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 100%;
+        border-radius: 90px;
+        background-color: rgba(255, 255, 255, .7);
+        left: -7%;
+      }
+      .textBoxCircle2{
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        top: 90%;
+        border-radius: 90px;
+        background-color: rgba(255, 255, 255, .7);
+        left: -2%;
+      }
+      .textBox{
+        position: absolute;
+        padding: 10px;
+        width: 220px;
+        height: 170px;
+        top: 15%;
+        left: 8%;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, .8);
+      }
+      .textBoxContent{
+
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="BackgroundContainer border positionA">
+<!--Mountain containers  -->
+      <div class="mountain4Pos mountainUniversal border positionA">
+      </div>
+      <div class="mountain1Pos mountainUniversal border positionA">
+      </div>
+      <div class="mountain2Pos mountainUniversal border positionA">
+      </div>
+      <div class="mountain3Pos mountainUniversal border positionA">
+      </div>
+<!-- Sun Containers -->
+      <div class="sun positionA">
+        <div class="sunLayer1">
+          <div class="sunLayer2">
+          </div>
+        </div>
+      </div>
+<!-- lower Background forefront -->
+      <div class="foreGround border positionA">
+      </div>
+<!-- clouds -->
+      <div class="clouds cloud1-1 border positionA">
+      </div>
+      <div class="clouds cloud1-3 border positionA">
+      </div>
+      <div class="clouds cloud1-2 border positionA">
+      </div>
+
+      <div class="clouds cloud2-1 border positionA">
+      </div>
+      <div class="clouds cloud2-3 border positionA">
+      </div>
+      <div class="clouds cloud2-2 border positionA">
+      </div>
+
+      <div class="clouds cloud3-1 border positionA">
+      </div>
+      <div class="clouds cloud3-3 border positionA">
+      </div>
+      <div class="clouds cloud3-2 border positionA">
+      </div>
+<!-- rabbit -->
+      <div class="rabbitBody border positionA">
+
+      </div>
+      <div class="rabbitHead border positionA">
+        <div class="rabbitEarL rabbitEarsUniversal border positionA">
+          <div class="rabbitEarInnerL rabbitEarInnerUniversal border positionA">
+          </div>
+        </div>
+        <div class="rabbitEarR rabbitEarsUniversal border positionA">
+          <div class="rabbitEarInnerR rabbitEarInnerUniversal border positionA">
+          </div>
+        </div>
+        <div class="rabbitEyeL border positionA">
+          <div class="rabbitEyeLIris border positionA">
+
+          </div>
+        </div>
+        <div class="rabbitEyeR border positionA">
+          <div class="rabbitEyeRIris border positionA">
+
+          </div>
+        </div>
+
+        <div class="rabbitMouthMain rabbitMouth border positionA">
+          <div class="rabbitMouthL rabbitMouth border positionA">
+
+          </div>
+          <div class="rabbitMouthR rabbitMouth border positionA">
+
+          </div>
+        </div>
+        <div class="rabbitNose border positionA">
+
+        </div>
+      </div>
+<!-- skillContainer -->
+      <div class="skillContainer">
+        <div class="css">
+          <h3>CSS</h3>
+        </div>
+        <div class="html">
+          <h3>HTML</h3>
+        </div>
+        <div class="javascript">
+          <h3>JavaScript</h3>
+        </div>
+        <div class="jquery">
+          <h3>JQuery</h3>
+        </div>
+        <div class="ruby">
+          <h3>Ruby/wRails</h3>
+        </div>
+        <div class="terminal">
+          <h3>Terminal</h3>
+        </div>
+        <div class="git">
+          <h3>GIT</h3>
+        </div>
+        <div class="sqlite">
+          <h3>SQlite</h3>
+        </div>
+      </div>
+<!-- grid brackets -->
+      <div class="bracketContainer">
+        <div class="beginner">
+          <h4>Beginner</h4>
+        </div>
+        <div class="familiar">
+          <h4>Familiar</h4>
+        </div>
+        <div class="proficient">
+          <h4>Proficient</h4>
+        </div>
+        <div class="expert">
+          <h4>Expert</h4>
+        </div>
+        <div class="master">
+          <h4>Master</h4>
+        </div>
+      </div>
+<!-- cactus1 -->
+      <div class="cactusPatch">
+        <div class="cactusContainer1 positionA">
+          <div class="cactus1 border positionR">
+            <div class="cactus1Details1 border positionR">
+              <div class="cactus1Details2 border positionR">
+              </div>
+            </div>
+          </div>
+          <div class="potRim1 pot1RimColor border positionR">
+          </div>
+          <div class="potBase1 pot1BaseColor border positionR">
+            <div class="pot1DUp1 pot1ZigZag">
+            </div>
+            <div class="pot1DDown1 pot1ZigZag">
+            </div>
+            <div class="pot1DUp2 pot1ZigZag">
+            </div>
+            <div class="pot1DDown2 pot1ZigZag">
+            </div>
+          </div>
+        </div>
+  <!-- cactus2 -->
+        <div class="cactusContainer2 positionA">
+          <div class="cactus2 border positionR">
+            <div class="cactus2Details1 border positionR">
+              <div class="cactus2Details2 border positionR">
+              </div>
+            </div>
+          </div>
+          <div class="potRim2 pot1RimColor border positionR">
+          </div>
+          <div class="potBase2 pot1BaseColor border positionR">
+            <div class="pot2DUp1 pot1ZigZag">
+            </div>
+            <div class="pot2DDown1 pot1ZigZag">
+            </div>
+            <div class="pot2DUp2 pot1ZigZag">
+            </div>
+            <div class="pot2DDown2 pot1ZigZag">
+            </div>
+          </div>
+        </div>
+  <!-- cactus3 -->
+        <div class="cactusContainer3 positionA">
+          <div class="cactus3 border positionR">
+            <div class="cactus3Details1 border positionR">
+              <div class="cactus3Details2 border positionR">
+              </div>
+            </div>
+          </div>
+          <div class="potRim3 pot1RimColor border positionR">
+          </div>
+          <div class="potBase3 pot1BaseColor border positionR">
+            <div class="pot3DUp1 pot1ZigZag">
+            </div>
+            <div class="pot3DDown1 pot1ZigZag">
+            </div>
+            <div class="pot3DUp2 pot1ZigZag">
+            </div>
+            <div class="pot3DDown2 pot1ZigZag">
+            </div>
+          </div>
+        </div>
+  <!-- cactus4 -->
+        <div class="cactusContainer4 positionA">
+          <div class="cactus4 border positionR">
+            <div class="cactus4Details1 border positionR">
+              <div class="cactus4Details2 border positionR">
+              </div>
+            </div>
+          </div>
+          <div class="potRim4 pot1RimColor border positionR">
+          </div>
+          <div class="potBase4 pot1BaseColor border positionR">
+            <div class="pot4DUp1 pot1ZigZag">
+            </div>
+            <div class="pot4DDown1 pot1ZigZag">
+            </div>
+            <div class="pot4DUp2 pot1ZigZag">
+            </div>
+            <div class="pot4DDown2 pot1ZigZag">
+            </div>
+          </div>
+        </div>
+  <!-- cactus5 -->
+        <div class="cactusContainer5 positionA">
+          <div class="cactus5 border positionR">
+            <div class="cactus5Details1 border positionR">
+              <div class="cactus5Details2 border positionR">
+              </div>
+            </div>
+          </div>
+          <div class="potRim5 pot1RimColor border positionR">
+          </div>
+          <div class="potBase5 pot1BaseColor border positionR">
+            <div class="pot5DUp1 pot1ZigZag">
+            </div>
+            <div class="pot5DDown1 pot1ZigZag">
+            </div>
+            <div class="pot5DUp2 pot1ZigZag">
+            </div>
+            <div class="pot5DDown2 pot1ZigZag">
+            </div>
+          </div>
+        </div>
+  <!-- cactus6 -->
+        <div class="cactusContainer6 positionA">
+          <div class="cactus6 border positionR">
+            <div class="cactus6Details1 border positionR">
+              <div class="cactus6Details2 border positionR">
+              </div>
+            </div>
+          </div>
+          <div class="potRim6 pot1RimColor border positionR">
+          </div>
+          <div class="potBase6 pot1BaseColor border positionR">
+            <div class="pot6DUp1 pot1ZigZag">
+            </div>
+            <div class="pot6DDown1 pot1ZigZag">
+            </div>
+            <div class="pot6DUp2 pot1ZigZag">
+            </div>
+            <div class="pot6DDown2 pot1ZigZag">
+            </div>
+          </div>
+        </div>
+  <!-- cactus7 -->
+        <div class="cactusContainer7 positionA">
+          <div class="cactus7 border positionR">
+            <div class="cactus7Details1 border positionR">
+              <div class="cactus7Details2 border positionR">
+              </div>
+            </div>
+          </div>
+          <div class="potRim7 pot1RimColor border positionR">
+          </div>
+          <div class="potBase7 pot1BaseColor border positionR">
+            <div class="pot7DUp1 pot1ZigZag">
+            </div>
+            <div class="pot7DDown1 pot1ZigZag">
+            </div>
+            <div class="pot7DUp2 pot1ZigZag">
+            </div>
+            <div class="pot7DDown2 pot1ZigZag">
+            </div>
+          </div>
+        </div>
+  <!-- cactus4 -->
+        <div class="cactusContainer8 positionA">
+          <div class="cactus8 border positionR">
+            <div class="cactus8Details1 border positionR">
+              <div class="cactus8Details2 border positionR">
+              </div>
+            </div>
+          </div>
+          <div class="potRim8 pot1RimColor border positionR">
+          </div>
+          <div class="potBase8 pot1BaseColor border positionR">
+            <div class="pot8DUp1 pot1ZigZag">
+            </div>
+            <div class="pot8DDown1 pot1ZigZag">
+            </div>
+            <div class="pot8DUp2 pot1ZigZag">
+            </div>
+            <div class="pot8DDown2 pot1ZigZag">
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- Irvin Character -->
+    <div class="characterContainer">
+      <div class="headBox">
+        <div class="Rear border positionA">
+          <div class="innerEarR border positionA">
+          </div>
+        </div>
+      <div class="head positionR border">
+        <div class="hat border positionA">
+          <p>ASU</p>
+          <div class="bill border positionA">
+          </div>
+        </div>
+        <div class="LeyeBrow border positionA">
+        </div>
+        <div class="ReyeBrow border positionA">
+        </div>
+        <div class="Lear border positionA">
+          <div class="innerEarL border positionA">
+          </div>
+        </div>
+        <div class="earLColorCorrect positionA">
+        </div>
+        <div class="Leye border positionA">
+          <div class="irisL border positionA">
+            <div class="innerIris positionA">
+              <div class="irisShine positionA">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="Reye border positionA">
+          <div class="irisR border positionA">
+            <div class="innerIris positionA">
+              <div class="irisShine positionA">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nose border positionA">
+        </div>
+        <div class="mouth border positionA">
+        </div>
+      </div>
+      </div>
+      <div class="bodyBox">
+      <div class="Larm border positionR">
+      </div>
+      <div class="Rarm border positionR">
+      </div>
+      <div class="Lhand border positionA">
+        <div class="Lindex border positionA">
+        </div>
+        <div class="Lmiddle border positionA">
+        </div>
+        <div class="Lring border positionA">
+        </div>
+      </div>
+      <div class="Lthumb border positionA">
+      </div>
+      <div class="Rhand border positionA">
+        <div class="Rindex border positionA">
+        </div>
+        <div class="Rmiddle border positionA">
+        </div>
+        <div class="Rring border positionA">
+        </div>
+      </div>
+      <div class="Rthumb border positionA">
+      </div>
+
+      <div class="mbody border positionA">
+        <div class="LgoldTrim border positionA">
+        </div>
+        <div class="LjerseyArm border positionA">
+        </div>
+        <div class="neckTrim border positionA">
+        </div>
+        <div class="neckTrimGold border positionA">
+        </div>
+        <div class="neck border positionA">
+        </div>
+        <div class="neckLineColor positionA">
+        </div>
+        <div class="neckLine border positionA">
+        </div>
+        <div class="RgoldTrim border positionA">
+        </div>
+        <div class="RjerseyArm border positionA">
+        </div>
+        <div class="A positionA">
+          A
+        </div>
+        <div class="S positionA">
+          S
+        </div>
+        <div class="bottomJerseyTrim border positionA">
+        </div>
+      </div>
+      <div class="pants border positionR">
+        <div class="pantsLine positionA">
+        </div>
+        <div class="pantsV border positionA">
+        </div>
+        <div class="pantsLPocket border positionA">
+        </div>
+        <div class="pantsRPocket border positionA">
+        </div>
+        <div class="Lboot border positionA">
+          <div class="bootLBase border positionA">
+          </div>
+        </div>
+        <div class="Rboot border positionA">
+          <div class="bootRBase border positionA">
+          </div>
+        </div>
+      </div>
+      </div>
+
+      </div>
+<!-- text box -->
+    <div class="textContainer">
+      <div class="textBoxCircle1">
+      </div>
+      <div class="textBoxCircle2">
+      </div>
+      <div class="textBox">
+        <div class="textBoxContent">
+          Hey, my name is Irvin and here are some of my skills as a developer!
+        </div>
+      </div>
+    </div>
+<!-- closing BackgroundContainer -->
+    </div>
+  </body>
+</html>

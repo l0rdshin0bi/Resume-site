@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>character</title>
+
+    <style media="screen">
+      *{
+        margin: 0px;
+        padding: 0px;
+      }
+      .border{
+        border: solid 1px black;
+      }
+      .positionR{
+        position: relative;
+      }
+      .positionA{
+        position: absolute;
+      }
+      .characterContainer{
+        width: 300px;
+        height: 500px;
+        left: 200px;
+      }
+      .Rear{
+        width: 24px;
+        height: 24px;
+        border-color: transparent #000 #000 transparent;
+        border-radius: 90px;
+        background-color: #ad885a;
+        top: 115px;
+        left: 191px;
+        transform: rotate(-50deg);
+      }
+      .innerEarR{
+        width: 18px;
+        height: 20px;
+        border-color: transparent #000 #000 transparent;
+        border-radius: 90px;
+        background-color: #a07c50;
+        top: -2px;
+        left: 1px;
+        transform: rotate(-20deg);
+      }
+      .head{
+        top: 75px;
+        left: 105px;
+        width: 100px;
+        height: 130px;
+        border-radius: 90px;
+        background: -webkit-linear-gradient(180deg, #a07c50, #ad885a);
+      }
+      .hat{
+        width: 92px;
+        height: 35px;
+        top: -8px;
+        left: 2px;
+        border-radius: 200px 200px 0 0;
+        background: -webkit-linear-gradient(180deg, #660000, maroon);
+      }
+      .bill{
+        width: 92px;
+        height: 4px;
+        top: 30px;
+        left: 8px;
+        border-radius: 200px 200px 0 0;
+        background-color: gold;
+      }
+      .LeyeBrow{
+        width: 16px;
+        height: 8px;
+        border: solid 3px #000;
+        border-color: #000 transparent transparent transparent;
+        border-radius: 90px;
+        top: 32px;;
+        left: 23px;
+        transform: rotate(-8deg);
+      }
+      .ReyeBrow{
+        width: 16px;
+        height: 8px;
+        border: solid 3px #000;
+        border-color: #000 transparent transparent transparent;
+        border-radius: 90px;
+        top: 32px;
+        left: 58px;
+        transform: rotate(8deg);
+      }
+      .Lear{
+        width: 24px;
+        height: 26px;
+        border-color: transparent transparent #000 #000;
+        border-radius: 90px;
+        background: -webkit-linear-gradient(240deg, #a07c50, #ad885a);
+        top: 40px;
+        left: -10px;
+        transform: rotate(26deg);
+      }
+      .innerEarL{
+        width: 14px;
+        height: 18px;
+        border-color: transparent transparent #000 #000;
+        border-radius: 90px;
+        background-color: #a07c50;
+        top: 2px;
+        left: 4px;
+        transform: rotate(8deg);
+      }
+      .earLColorCorrect{
+        width: 14px;
+        height: 25px;
+        top: 40px;
+        left: 2px;
+        border-radius: 90px;
+        background-color: #ad885a;
+      }
+      .Leye{
+        top: 40px;
+        left: 25px;
+        width: 15px;
+        height: 25px;
+        border-radius: 90px 90px 0px 0px;
+        background-color: #a07c50;
+      }
+      .Reye{
+        top: 13px;
+        left: 60px;
+        width: 15px;
+        height: 25px;
+        border-radius: 90px 90px 0px 0px;
+        background-color: #a07c50;
+      }
+      .iris{
+        width: 13px;
+        height: 17px;
+        border-radius: 90px 90px 0px 0px;
+        top: 6px;
+        background: -webkit-linear-gradient(#442e13, #63431c);
+      }
+      .innerIris{
+        width: 7px;
+        height: 7px;
+        border-radius: 90px;
+        top: 6px;
+        left: 2px;
+        background-color: black;
+      }
+      .irisShine{
+        width: 5px;
+        height: 5px;
+        border-radius: 90px;
+        background-color: white;
+        top: -4px;
+      }
+      .nose{
+        width: 14px;
+        height: 18px;
+        border-color: transparent #000 #000 transparent;
+        border-radius: 90px;
+        background: -webkit-linear-gradient(240deg, #a07c50, #ad885a);
+        top: 60px;
+        left: 43px;
+      }
+      .mouth{
+        width: 70px;
+        height: 70px;
+        border: solid 3px #000;
+        border-color: transparent transparent #000 transparent;
+        border-radius: 90px;
+        top: 30px;
+        left: 15px;
+        transform: rotate(12deg);
+      }
+      p{
+        text-align: center;
+        color: gold;
+        font-size: 16px;
+        font-family: serif;
+        padding: 6px;
+      }
+      .Larm{
+        width: 100px;
+        height: 32px;
+        top: 70px;
+        left: 22px;
+        transform: rotate(45deg);
+        background-color: #ad885a;
+        border-radius: 20px;
+      }
+      .Lhand{
+        top: 164px;
+        left: 24px;
+        width: 35px;
+        height: 40px;
+        border-radius: 90px;
+        border-color: transparent black transparent black;
+        background-color: #ad885a;
+        transform: rotate(-28deg);
+        /*position: absolute;
+        border-radius: 40px 40px 0 0;
+        border-color: #ad885a transparent transparent transparent;*/
+      }
+      .Lthumb{
+        top: 160px;
+        left: 53px;
+        width: 10px;
+        height: 20px;
+        border-radius: 90px;
+        border-color: black black transparent black;
+        background-color: #ad885a;
+        transform: rotate(32deg);
+      }
+      .Lindex{
+        top: -15px;
+        left: 23px;
+        width: 10px;
+        height: 22px;
+        border-radius: 90px;
+        border-color: black black transparent black;
+        background-color: #ad885a;
+        transform: rotate(22deg);
+      }
+      .Lmiddle{
+        top: -18px;
+        left: 8px;
+        width: 10px;
+        height: 22px;
+        border-radius: 90px;
+        border-color: black black transparent black;
+        background-color: #ad885a;
+        transform: rotate(-2deg);
+      }
+      .Lring{
+        top: -10px;
+        left: -6px;
+        width: 10px;
+        height: 22px;
+        border-radius: 90px;
+        border-color: black black transparent black;
+        background-color: #ad885a;
+        transform: rotate(-30deg);
+      }
+      .Rarm{
+        width: 100px;
+        height: 32px;
+        top: 28px;
+        left: 180px;
+        transform: rotate(-45deg);
+        background-color: #a07c50;
+        border-radius: 20px;
+      }
+      .Rhand{
+        top: 160px;
+        left: 238px;
+        width: 35px;
+        height: 40px;
+        border-radius: 90px;
+        border-color: transparent black transparent black;
+        background-color: #a07c50;
+        transform: rotate(14deg);
+        }
+      .Rthumb{
+        top: 162px;
+        left: 230px;
+        width: 10px;
+        height: 20px;
+        border-radius: 90px;
+        border-color: black black transparent black;
+        background-color: #a07c50;
+        transform: rotate(-48deg);
+      }
+      .Rindex{
+        top: -16px;
+        left: -1px;
+        width: 10px;
+        height: 22px;
+        border-radius: 90px;
+        border-color: black black transparent black;
+        background-color: #a07c50;
+        transform: rotate(-20deg);
+      }
+      .Rmiddle{
+        top: -20px;
+        left: 14px;
+        width: 10px;
+        height: 22px;
+        border-radius: 90px;
+        border-color: black black transparent black;
+        background-color: #a07c50;
+        transform: rotate(0deg);
+      }
+      .Rring{
+        top: -14px;
+        left: 28px;
+        width: 10px;
+        height: 22px;
+        border-radius: 90px;
+        border-color: black black transparent black;
+        background-color: #a07c50;
+        transform: rotate(26deg);
+      }
+      .mbody{
+        height: 150px;
+        width: 122px;
+        border-radius: 35px 35px 2px 2px;
+        top: 220px;
+        left: 91px;
+        background: -webkit-linear-gradient(180deg, #660000, maroon);
+      }
+      .LgoldTrim{
+        background-color: gold;
+        height: 50px;
+        width: 37px;
+        border-radius: 35px 25px 25px 0;
+        top: -1px;
+      }
+      .LjerseyArm{
+        border-color: transparent black black transparent;
+        background-color: #ad885a;
+        height: 45px;
+        width: 35px;
+        border-radius: 35px 25px 25px 10px;
+        left: -1px;
+      }
+      .neckTrim{
+        background-color: gold;
+        height: 25px;
+        width: 52px;
+        border-radius: 0 0 35px 35px;
+        left: 39px;
+        top: -1.5px;
+      }
+      .neckTrimGold{
+        background: -webkit-linear-gradient(180deg, #a07c50, #ad885a);
+        height: 21px;
+        width: 46px;
+        border-radius: 0 0 35px 35px;
+        left: 42px;
+        top: -1.5px;
+      }
+      .neckLineColor{
+        border: solid black 5px;
+        top: -154px;
+        left: 21px;
+        width: 80px;
+        height: 130px;
+        border-radius: 90px;
+        background: transparent;
+        border-color: transparent transparent #ad885a transparent;
+      }
+      .neckLine{
+        top: -147px;
+        left: 14px;
+        width: 100px;
+        height: 130px;
+        border-radius: 90px;
+        background: transparent;
+        border-color: transparent transparent black transparent;
+      }
+      .neck{
+        background: -webkit-linear-gradient(180deg, #a07c50, #ad885a);
+        height: 26px;
+        width: 26px;
+        border-radius: 0 0 5px 5px;
+        border-color: transparent black transparent black;
+        left: 52px;
+        top: -20px;
+
+      }
+      .RgoldTrim{
+        background-color: gold;
+        height: 51px;
+        width: 28px;
+        border-radius: 0 35px 0 35px;
+        top: -1px;
+        left: 93px;
+      }
+      .RjerseyArm{
+        border-color: black transparent transparent transparent;
+        background-color: #660000;
+        height: 50px;
+        width: 26px;
+        border-radius: 0 35px 0 35px;
+        top: 0px;
+        left: 92px;
+      }
+      .A{
+        font-size: 100px;
+        color: gold;
+        top: 20px;
+        left: 34px;
+        text-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .S{
+        font-size: 90px;
+        color: gold;
+        top: 30px;
+        left: 44px;
+        text-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+      }
+      .bottomJerseyTrim{
+        background-color: gold;
+        width: 122px;
+        height: 3px;
+        top: 142px;
+        left: -1px;
+      }
+      .pants{
+        background-color: #5480af;
+        background: -webkit-linear-gradient(180deg, #49719c, #5480af);
+        width: 122px;
+        height: 100px;
+        top: 165px;
+        left: 90px;
+      }
+      .pantsLine{
+        width: 2px;
+        height: 70px;
+        background-color: black;
+        left: 70px;
+        top: 31px;
+      }
+      .pantsV{
+        width: 15px;
+        height: 15px;
+        border-color: transparent transparent black black;
+        left: 63px;
+        top: 13px;
+        transform: rotate(-45deg);
+      }
+      .pantsLPocket{
+        width: 25px;
+        height: 15px;
+        border-color: transparent transparent black transparent;
+        left: -10px;
+        top: -5px;
+        transform: rotate(-45deg);
+      }
+      .pantsRPocket{
+        width: 15px;
+        height: 15px;
+        border-color: transparent transparent transparent black;
+        left: 114px;
+        top: -9px;
+        transform: rotate(-45deg);
+      }
+      .Lboot{
+        background-color: #60503a;
+        width: 69px;
+        height: 20px;
+        top: 79px;
+        border-radius: 24px 24px 0 0;
+      }
+      .bootLBase{
+        background-color: #403526;
+        width: 67px;
+        height: 4px;
+        top: 15px;
+        border-radius: 4px 4px 0 0;
+      }
+      .Rboot{
+        background-color: #60503a;
+        width: 59px;
+        height: 20px;
+        top: 79px;
+        border-radius: 24px 24px 0 0;
+        left: 71px;
+      }
+      .bootRBase{
+        border: solid 1px ;
+        border-radius: 4px 4px 0 0;
+        background-color: #403526;
+        width: 57px;
+        height: 4px;
+        top: 15px;
+      }
+
+    </style>
+  </head>
+  <body>
+
+<div class="characterContainer border">
+<div class="headBox">
+  <div class="Rear border positionA">
+    <div class="innerEarR border positionA">
+    </div>
+  </div>
+<div class="head positionR border">
+  <div class="hat border positionA">
+    <p>ASU</p>
+    <div class="bill border positionA">
+    </div>
+  </div>
+  <div class="LeyeBrow border positionA">
+  </div>
+  <div class="ReyeBrow border positionA">
+  </div>
+  <div class="Lear border positionA">
+    <div class="innerEarL border positionA">
+    </div>
+  </div>
+  <div class="earLColorCorrect positionA">
+  </div>
+  <div class="Leye border positionR">
+    <div class="iris border positionR">
+      <div class="innerIris positionR">
+        <div class="irisShine positionR">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="Reye border positionR">
+    <div class="iris border positionR">
+      <div class="innerIris positionR">
+        <div class="irisShine positionR">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nose border positionA">
+  </div>
+  <div class="mouth border positionA">
+  </div>
+</div>
+</div>
+<div class="bodyBox">
+<div class="Larm border positionR">
+</div>
+<div class="Rarm border positionR">
+</div>
+<div class="Lhand border positionA">
+  <div class="Lindex border positionA">
+  </div>
+  <div class="Lmiddle border positionA">
+  </div>
+  <div class="Lring border positionA">
+  </div>
+</div>
+<div class="Lthumb border positionA">
+</div>
+<div class="Rhand border positionA">
+  <div class="Rindex border positionA">
+  </div>
+  <div class="Rmiddle border positionA">
+  </div>
+  <div class="Rring border positionA">
+  </div>
+</div>
+<div class="Rthumb border positionA">
+</div>
+
+<div class="mbody border positionA">
+  <div class="LgoldTrim border positionA">
+  </div>
+  <div class="LjerseyArm border positionA">
+  </div>
+  <div class="neckTrim border positionA">
+  </div>
+  <div class="neckTrimGold border positionA">
+  </div>
+  <div class="neck border positionA">
+  </div>
+  <div class="neckLineColor positionA">
+  </div>
+  <div class="neckLine border positionA">
+  </div>
+  <div class="RgoldTrim border positionA">
+  </div>
+  <div class="RjerseyArm border positionA">
+  </div>
+  <div class="A positionA">
+    A
+  </div>
+  <div class="S positionA">
+    S
+  </div>
+  <div class="bottomJerseyTrim border positionA">
+  </div>
+</div>
+<div class="pants border positionR">
+  <div class="pantsLine positionA">
+  </div>
+  <div class="pantsV border positionA">
+  </div>
+  <div class="pantsLPocket border positionA">
+  </div>
+  <div class="pantsRPocket border positionA">
+  </div>
+  <div class="Lboot border positionA">
+    <div class="bootLBase border positionA">
+    </div>
+  </div>
+  <div class="Rboot border positionA">
+    <div class="bootRBase border positionA">
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+
+
+
+  </body>
+</html>
